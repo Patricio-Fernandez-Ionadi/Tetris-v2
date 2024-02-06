@@ -277,14 +277,16 @@ class Game {
 		let boardToRight =
 			this.board.data[this.currentPiece.index.y][this.currentPiece.index.x + 1]
 
-		if (this.keyPressed === 'left' && this.timer.counter % 20 === 0) {
+		if (this.keyPressed === 'left') {
 			if (boardToLeft === 0) {
 				this.currentPiece.moveLeft()
+      this.keyPressed = ''
 			}
-		} else if (this.keyPressed === 'right' && this.timer.counter % 20 === 0) {
+		} else if (this.keyPressed === 'right') {
 			if (boardToRight === 0) {
 				this.currentPiece.moveRight()
-			}
+      this.keyPressed = ''			
+     }
 		} else if (this.keyPressed === 'down') {
 			if (
 				this.currentPiece.index.y <
